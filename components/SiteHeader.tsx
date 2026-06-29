@@ -39,18 +39,11 @@ export default function SiteHeader() {
   }, []);
 
   const closeMenu = () => setIsOpen(false);
-  const solidHeader = !onHero || isOpen;
 
   return (
     <>
-      <header
-        className={`pointer-events-none fixed top-0 right-0 left-0 z-50 transition-colors duration-300 ${
-          solidHeader
-            ? "bg-kbc-charcoal/92 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-md"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-10 sm:py-6 lg:px-16">
+      <header className="pointer-events-none fixed top-0 right-5 left-5 z-50">
+        <div className="flex items-center justify-between py-6 sm:py-8">
           <div
             className={`pointer-events-auto transition-[filter] duration-300 ${
               onHero && !isOpen
@@ -63,12 +56,12 @@ export default function SiteHeader() {
 
           <div className="pointer-events-auto flex items-center gap-3 sm:gap-4">
             <span
-              className={`hidden rounded-full border px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.22em] backdrop-blur-sm transition-opacity duration-300 sm:inline-block ${
+              className={`max-w-[88px] rounded-full border px-2.5 py-1.5 text-center text-[10px] leading-tight font-semibold uppercase tracking-wider backdrop-blur-sm transition-opacity duration-300 sm:max-w-none sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.22em] ${
                 isOpen ? "pointer-events-none opacity-0" : "opacity-100"
               } ${
                 onHero && !isOpen
                   ? "border-white/30 bg-black/20 text-white/90"
-                  : "border-white/15 bg-white/5 text-white/80"
+                  : "border-white/15 bg-black/30 text-white/90"
               }`}
             >
               Flame-Grilled Perfection
