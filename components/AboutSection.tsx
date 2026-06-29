@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { otherBrands } from "@/lib/other-brands";
 import OurJourneySection from "@/components/OurJourneySection";
+import { useMarqueeScroll } from "@/hooks/useMarqueeScroll";
 
 const beliefs = [
   {
@@ -61,9 +62,14 @@ function BrandMarqueeStrip({ idPrefix }: { idPrefix: string }) {
 }
 
 function AboutMarquee() {
+  const trackRef = useMarqueeScroll<HTMLDivElement>({ speed: 0.75, direction: "left" });
+
   return (
     <div className="about-marquee relative mt-12 w-full overflow-hidden py-6 sm:mt-16 sm:py-10 lg:py-14">
-      <div className="about-marquee-track flex w-max flex-nowrap items-center">
+      <div
+        ref={trackRef}
+        className="about-marquee-track flex w-max flex-nowrap items-center"
+      >
         <div className="flex shrink-0 flex-nowrap items-center">
           <BrandMarqueeStrip idPrefix="a" />
         </div>

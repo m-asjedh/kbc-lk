@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FormEvent, useState } from "react";
 import KbcLogo from "@/components/KbcLogo";
 import { otherBrands } from "@/lib/other-brands";
+import { useMarqueeScroll } from "@/hooks/useMarqueeScroll";
 
 const footerNav = [
   { label: "Home", href: "#", num: "01" },
@@ -92,9 +93,11 @@ function BrandLogoStrip({ idPrefix }: { idPrefix: string }) {
 }
 
 function BrandFlowMarquee() {
+  const trackRef = useMarqueeScroll<HTMLDivElement>({ speed: 0.55, direction: "left" });
+
   return (
     <div className="footer-brands-marquee py-2">
-      <div className="footer-brands-track">
+      <div ref={trackRef} className="footer-brands-track">
         <div className="flex shrink-0 flex-nowrap items-center">
           <BrandLogoStrip idPrefix="fa" />
         </div>
@@ -172,9 +175,7 @@ function BrandLogoWall() {
 
       <div className="relative bg-kbc-charcoal pb-2 pt-8 sm:pt-10">
         <p className="relative mb-4 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-kbc-orange sm:mb-5">
-          The Full Lineup ·{" "}
-          <span className="sm:hidden">Tap to pause</span>
-          <span className="hidden sm:inline">Hover to pause</span>
+          The Full Lineup
         </p>
         <BrandFlowMarquee />
       </div>

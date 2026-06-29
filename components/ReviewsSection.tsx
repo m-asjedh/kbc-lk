@@ -1,6 +1,7 @@
 "use client";
 
 import { reviews } from "@/lib/reviews";
+import { useMarqueeScroll } from "@/hooks/useMarqueeScroll";
 
 const featuredReview = reviews[0];
 
@@ -80,10 +81,11 @@ function FlowReviewCard({ review }: { review: (typeof reviews)[number] }) {
 
 function ReviewsMarquee() {
   const strip = [...reviews, ...reviews];
+  const trackRef = useMarqueeScroll<HTMLDivElement>({ speed: 0.45, direction: "right" });
 
   return (
     <div className="reviews-flow-marquee w-full overflow-hidden py-4">
-      <div className="reviews-flow-track gap-6">
+      <div ref={trackRef} className="reviews-flow-track gap-6">
         <div className="flex shrink-0 flex-nowrap items-stretch gap-6">
           {strip.map((review, i) => (
             <FlowReviewCard key={`a-${review.id}-${i}`} review={review} />
@@ -161,9 +163,7 @@ export default function ReviewsSection() {
           </div>
 
           <p className="mt-6 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-kbc-charcoal/35 sm:mt-8">
-            Reviews sourced from Google Maps ·{" "}
-            <span className="sm:hidden">Tap marquee to pause</span>
-            <span className="hidden sm:inline">Hover to pause</span>
+            Reviews sourced from Google Maps
           </p>
         </div>
       </div>

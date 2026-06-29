@@ -82,6 +82,26 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   width: max-content;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-marquee:hover .about-marquee-track--css {
+    animation-play-state: paused;
+  }
+
+  .footer-brands-marquee:hover .footer-brands-track--css {
+    animation-play-state: paused;
+  }
+
+  .reviews-flow-marquee:hover .reviews-flow-track--css {
+    animation-play-state: paused;
+  }
+}
+
+.about-marquee-track--css {
   will-change: transform;
   animation: about-marquee-scroll 48s linear infinite;
 }
@@ -95,31 +115,7 @@ body {
   }
 }
 
-.about-marquee:hover .about-marquee-track {
-  animation-play-state: paused;
-}
-
-@media (hover: none) {
-  .about-marquee:active .about-marquee-track,
-  .footer-brands-marquee:active .footer-brands-track,
-  .reviews-flow-marquee:active .reviews-flow-track {
-    animation-play-state: paused;
-  }
-}
-
 @media (max-width: 639px) {
-  .about-marquee-track {
-    animation-duration: 36s;
-  }
-
-  .footer-brands-track {
-    animation-duration: 55s;
-  }
-
-  .reviews-flow-track {
-    animation-duration: 70s;
-  }
-
   .reviews-flow-marquee {
     -webkit-mask-image: linear-gradient(
       to right,
@@ -405,12 +401,9 @@ body {
   flex-wrap: nowrap;
   align-items: stretch;
   width: max-content;
-  will-change: transform;
-  animation: reviews-flow-scroll 100s linear infinite;
-}
-
-.reviews-flow-marquee:hover .reviews-flow-track {
-  animation-play-state: paused;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes reviews-flow-scroll {
@@ -445,12 +438,9 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   width: max-content;
-  will-change: transform;
-  animation: footer-brands-scroll 90s linear infinite;
-}
-
-.footer-brands-marquee:hover .footer-brands-track {
-  animation-play-state: paused;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes footer-brands-scroll {
