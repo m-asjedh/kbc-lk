@@ -55,7 +55,7 @@ function ReviewAvatar({
 
 function FlowReviewCard({ review }: { review: (typeof reviews)[number] }) {
   return (
-    <article className="flex w-[min(100vw-3rem,360px)] shrink-0 flex-col rounded-3xl bg-white p-6 shadow-[0_16px_48px_rgba(28,22,18,0.09)] ring-1 ring-kbc-charcoal/8 sm:w-[400px] sm:p-8">
+    <article className="flex w-[min(88vw,360px)] shrink-0 flex-col rounded-3xl bg-white p-5 shadow-[0_16px_48px_rgba(28,22,18,0.09)] ring-1 ring-kbc-charcoal/8 sm:w-[400px] sm:p-8">
       <div className="flex items-center justify-between gap-3">
         <StarRating rating={review.rating} />
         <span className="rounded-full bg-kbc-orange/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-kbc-orange">
@@ -160,8 +160,10 @@ export default function ReviewsSection() {
             <ReviewsMarquee />
           </div>
 
-          <p className="mt-8 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-kbc-charcoal/35">
-            Reviews sourced from Google Maps
+          <p className="mt-6 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-kbc-charcoal/35 sm:mt-8">
+            Reviews sourced from Google Maps ·{" "}
+            <span className="sm:hidden">Tap marquee to pause</span>
+            <span className="hidden sm:inline">Hover to pause</span>
           </p>
         </div>
       </div>

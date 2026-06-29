@@ -99,6 +99,62 @@ body {
   animation-play-state: paused;
 }
 
+@media (hover: none) {
+  .about-marquee:active .about-marquee-track,
+  .footer-brands-marquee:active .footer-brands-track,
+  .reviews-flow-marquee:active .reviews-flow-track {
+    animation-play-state: paused;
+  }
+}
+
+@media (max-width: 639px) {
+  .about-marquee-track {
+    animation-duration: 36s;
+  }
+
+  .footer-brands-track {
+    animation-duration: 55s;
+  }
+
+  .reviews-flow-track {
+    animation-duration: 70s;
+  }
+
+  .reviews-flow-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 2%,
+      black 98%,
+      transparent
+    );
+  }
+
+  .footer-brands-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 1%,
+      black 99%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 1%,
+      black 99%,
+      transparent
+    );
+  }
+}
+
 .footer-cta-marquee {
   overflow: hidden;
 }

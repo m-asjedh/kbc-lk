@@ -45,14 +45,14 @@ function BrandMarqueeStrip({ idPrefix }: { idPrefix: string }) {
       {brands.map((brand, index) => (
         <div
           key={`${idPrefix}-${brand.src}-${index}`}
-          className="flex shrink-0 items-center px-10 sm:px-12 lg:px-14"
+          className="flex shrink-0 items-center px-5 sm:px-10 lg:px-12"
         >
           <Image
             src={brand.src}
             alt={brand.name}
             width={480}
             height={192}
-            className="h-24 w-auto max-w-[320px] object-contain sm:h-28 sm:max-w-[400px] lg:h-32 lg:max-w-[480px] xl:h-36 xl:max-w-[520px]"
+            className="h-14 w-auto max-w-[180px] object-contain sm:h-24 sm:max-w-[280px] lg:h-32 lg:max-w-[480px] xl:h-36 xl:max-w-[520px]"
           />
         </div>
       ))}
@@ -62,7 +62,7 @@ function BrandMarqueeStrip({ idPrefix }: { idPrefix: string }) {
 
 function AboutMarquee() {
   return (
-    <div className="about-marquee relative mt-16 w-full overflow-hidden py-10 sm:py-12 lg:py-14">
+    <div className="about-marquee relative mt-12 w-full overflow-hidden py-6 sm:mt-16 sm:py-10 lg:py-14">
       <div className="about-marquee-track flex w-max flex-nowrap items-center">
         <div className="flex shrink-0 flex-nowrap items-center">
           <BrandMarqueeStrip idPrefix="a" />

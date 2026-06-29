@@ -74,15 +74,15 @@ function BrandLogoStrip({ idPrefix }: { idPrefix: string }) {
       {brands.map((brand, index) => (
         <div
           key={`${idPrefix}-${brand.src}-${index}`}
-          className="group flex shrink-0 items-center px-5 sm:px-6 lg:px-8"
+          className="group flex shrink-0 items-center px-3 sm:px-5 lg:px-8"
         >
-          <div className="flex h-40 w-64 items-center justify-center rounded-2xl bg-white px-5 shadow-[0_8px_32px_rgba(0,0,0,0.2)] ring-1 ring-white/20 transition-all duration-300 group-hover:ring-kbc-orange/50 sm:h-48 sm:w-80 lg:h-52 lg:w-88">
+          <div className="flex h-28 w-44 items-center justify-center rounded-xl bg-white px-3 shadow-[0_8px_32px_rgba(0,0,0,0.2)] ring-1 ring-white/20 transition-all duration-300 group-hover:ring-kbc-orange/50 sm:h-40 sm:w-64 sm:rounded-2xl sm:px-5 lg:h-52 lg:w-88">
             <Image
               src={brand.src}
               alt={brand.name}
               width={560}
               height={224}
-              className="h-24 w-auto max-w-[92%] object-contain transition-transform duration-300 group-hover:scale-105 sm:h-28 lg:h-32"
+              className="h-14 w-auto max-w-[92%] object-contain transition-transform duration-300 group-hover:scale-105 sm:h-24 lg:h-32"
             />
           </div>
         </div>
@@ -171,8 +171,10 @@ function BrandLogoWall() {
       </div>
 
       <div className="relative bg-kbc-charcoal pb-2 pt-8 sm:pt-10">
-        <p className="relative mb-5 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-kbc-orange">
-          The Full Lineup · Hover to pause
+        <p className="relative mb-4 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-kbc-orange sm:mb-5">
+          The Full Lineup ·{" "}
+          <span className="sm:hidden">Tap to pause</span>
+          <span className="hidden sm:inline">Hover to pause</span>
         </p>
         <BrandFlowMarquee />
       </div>
