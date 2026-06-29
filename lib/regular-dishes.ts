@@ -13,9 +13,9 @@ export type RegularDish = {
   image?: string;
 };
 
-/** Encode filenames with spaces for public folder paths */
+/** Public path for menu item images under /public/menu-items */
 export function dishImage(filename: string): string {
-  return `/${encodeURIComponent(filename)}`;
+  return `/menu-items/${encodeURIComponent(filename)}`;
 }
 
 export const regularDishCategories: RegularDishCategory[] = [

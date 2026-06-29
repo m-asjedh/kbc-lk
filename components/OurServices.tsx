@@ -11,7 +11,7 @@ const services = [
     title: "Dine-In",
     description:
       "Relax and enjoy your favorites in our warm and welcoming space.",
-    image: "/dine-in.png",
+    image: "/services/dine-in.png",
     icon: (
       <path
         strokeLinecap="round"
@@ -25,7 +25,7 @@ const services = [
     number: "02",
     title: "Takeaway",
     description: "Quick, easy, and hot. Perfect for when you're on the move.",
-    image: "/takeway.png",
+    image: "/services/takeway.png",
     icon: (
       <path
         strokeLinecap="round"
@@ -39,7 +39,7 @@ const services = [
     number: "03",
     title: "Delivery",
     description: "We bring the crunch to your couch. Fast. Hot. Reliable.",
-    image: "/delivery.png",
+    image: "/services/delivery.png",
     icon: (
       <path
         strokeLinecap="round"
@@ -53,7 +53,7 @@ const services = [
     number: "04",
     title: "Catering",
     description: "Perfect for parties, events, and every big occasion.",
-    image: "/catering.png",
+    image: "/services/catering.png",
     icon: (
       <path
         strokeLinecap="round"

@@ -125,7 +125,7 @@ export default function AboutSection() {
               <div className="relative overflow-hidden rounded-[36px] shadow-[0_32px_80px_rgba(28,22,18,0.22)] ring-1 ring-kbc-charcoal/10">
                 <div className="relative aspect-5/4 w-full sm:aspect-16/11">
                   <Image
-                    src="/kbc-outlet.png"
+                    src="/other/kbc-outlet.png"
                     alt="KBC Original restaurant in Bambalapitiya"
                     fill
                     className="object-cover"

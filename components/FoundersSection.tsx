@@ -138,7 +138,7 @@ export default function FoundersSection() {
               <div className="relative overflow-hidden rounded-[36px] bg-white p-4 shadow-[0_40px_100px_rgba(0,0,0,0.5)] ring-1 ring-white/20 sm:p-5">
                 <div className="relative aspect-4/5 w-full overflow-hidden rounded-[28px] bg-white sm:aspect-5/6">
                   <Image
-                    src="/founders.png"
+                    src="/other/founders.png"
                     alt="Abdus Salaam and the KBC Original leadership team"
                     fill
                     className="object-contain object-bottom p-2"

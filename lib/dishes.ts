@@ -1,3 +1,5 @@
+import { dishImage } from "@/lib/regular-dishes";
+
 export type Dish = {
   id: string;
   name: string;
@@ -16,7 +18,7 @@ export const popularDishes: Dish[] = [
       "Crispy wings tossed in our signature smoky marinade and flame-grilled to juicy perfection.",
     price: 1850,
     rating: 5,
-    image: "/smoky-bbq-wings.jpeg",
+    image: dishImage("smoky-bbq-wings.jpeg"),
     badge: "Best Seller",
   },
   {
@@ -26,7 +28,7 @@ export const popularDishes: Dish[] = [
       "A hearty spread of charred chicken, golden breadsticks, and fresh garden salad for sharing.",
     price: 3200,
     rating: 4,
-    image: "/flame-grilled-chicken.jpeg",
+    image: dishImage("flame-grilled-chicken.jpeg"),
     badge: "Family Favourite",
   },
   {
@@ -36,7 +38,7 @@ export const popularDishes: Dish[] = [
       "Tender half chicken marinated overnight in secret spices, slow-grilled over open flame.",
     price: 2450,
     rating: 5,
-    image: "/bbq-chicken.jpeg",
+    image: dishImage("bbq-chicken.jpeg"),
     badge: "Chef's Pick",
   },
   {
@@ -46,7 +48,7 @@ export const popularDishes: Dish[] = [
       "Fall-off-the-bone ribs glazed with sweet honey BBQ sauce and finished on the grill.",
     price: 2800,
     rating: 5,
-    image: "/honey-glazed-ribs.jpeg",
+    image: dishImage("honey-glazed-ribs.jpeg"),
     badge: "Sweet & Smoky",
   },
   {
@@ -56,7 +58,7 @@ export const popularDishes: Dish[] = [
       "Our legendary flame-kissed chicken — the dish that started it all, made with love and care.",
     price: 2200,
     rating: 5,
-    image: "/kbc-bbq.jpeg",
+    image: dishImage("kbc-bbq.jpeg"),
     badge: "Signature",
   },
 ];
