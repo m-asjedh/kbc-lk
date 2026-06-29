@@ -292,7 +292,7 @@ export default function SiteFooter() {
 
             <form
               onSubmit={handleSubscribe}
-              className="relative mt-6 flex w-full max-w-lg gap-2 lg:mt-0"
+              className="relative mt-6 flex w-full max-w-lg flex-col gap-2 sm:flex-row lg:mt-0"
             >
               <label htmlFor="footer-email" className="sr-only">
                 Email address

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getHeroFramePath, HERO_FRAME_COUNT } from "@/lib/hero-frames";
 import KbcLogo from "@/components/KbcLogo";
-import SiteHeader from "@/components/SiteHeader";
 
 const SCROLL_HEIGHT_VH = 350;
 
@@ -165,8 +164,6 @@ export default function HeroSection() {
       aria-label="KBC hero"
     >
       <div id="hero" className="sticky top-0 h-screen w-full overflow-hidden bg-black">
-        <SiteHeader />
-
         <canvas
           ref={canvasRef}
           className="absolute inset-0 h-full w-full"

@@ -55,7 +55,7 @@ function ReviewAvatar({
 
 function FlowReviewCard({ review }: { review: (typeof reviews)[number] }) {
   return (
-    <article className="flex w-[360px] shrink-0 flex-col rounded-3xl bg-white p-7 shadow-[0_16px_48px_rgba(28,22,18,0.09)] ring-1 ring-kbc-charcoal/8 sm:w-[400px] sm:p-8">
+    <article className="flex w-[min(100vw-3rem,360px)] shrink-0 flex-col rounded-3xl bg-white p-6 shadow-[0_16px_48px_rgba(28,22,18,0.09)] ring-1 ring-kbc-charcoal/8 sm:w-[400px] sm:p-8">
       <div className="flex items-center justify-between gap-3">
         <StarRating rating={review.rating} />
         <span className="rounded-full bg-kbc-orange/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-kbc-orange">

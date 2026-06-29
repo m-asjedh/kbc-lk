@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import SiteHeader from "@/components/SiteHeader";
 import BackToTopButton from "@/components/BackToTopButton";
 import ScrollReveal from "@/components/ScrollReveal";
 import PopularDishes from "@/components/PopularDishes";
@@ -12,7 +13,9 @@ import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <SiteHeader />
+      <main>
       <HeroSection />
       <ScrollReveal>
         <PopularDishes />
@@ -40,5 +43,6 @@ export default function Home() {
       </ScrollReveal>
       <BackToTopButton />
     </main>
+    </>
   );
 }

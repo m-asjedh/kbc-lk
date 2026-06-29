@@ -134,13 +134,13 @@ export default function OurJourneySection() {
           </Reveal>
 
           <Reveal delay={150} className="mt-10 lg:mt-12">
-            <div className="relative flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] scrollbar-none sm:gap-0 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            <div className="relative flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] scrollbar-none md:gap-0 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden">
               {milestones.map((item, index) => (
                 <button
                   key={item.step}
                   type="button"
                   onClick={() => setActiveStep(index)}
-                  className={`group relative shrink-0 px-4 py-3 text-left transition-colors sm:flex-1 sm:px-6 sm:py-4 ${
+                  className={`group relative shrink-0 px-4 py-3 text-left transition-colors md:flex-1 md:px-6 md:py-4 ${
                     activeStep === index ? "text-white" : "text-white/40 hover:text-white/70"
                   }`}
                 >

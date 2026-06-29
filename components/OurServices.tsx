@@ -119,7 +119,7 @@ export default function OurServices() {
     <section id="services" className="relative overflow-hidden bg-kbc-cream">
       <div className="relative bg-kbc-charcoal">
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-2 lg:gap-0">
-          <div className="flex flex-col justify-center px-6 py-16 pb-48 sm:px-10 lg:px-16 lg:py-24 lg:pb-52">
+          <div className="flex flex-col justify-center px-6 py-16 pb-32 sm:px-10 sm:pb-40 lg:px-16 lg:py-24 lg:pb-44">
             <p className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-kbc-orange">
               <span className="h-px w-8 bg-kbc-orange" />
               What We Offer
@@ -144,7 +144,7 @@ export default function OurServices() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto -mt-40 max-w-7xl px-6 sm:-mt-44 sm:px-10 lg:-mt-48 lg:px-16">
+      <div className="relative z-10 mx-auto -mt-24 max-w-7xl px-6 sm:-mt-32 sm:px-10 lg:-mt-40 lg:px-16">
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => {
             const isActive = activeId === service.id;
@@ -152,12 +152,21 @@ export default function OurServices() {
             return (
               <article
                 key={service.id}
-                className={`group relative overflow-hidden rounded-[28px] bg-white transition-all duration-500 ${
+                role="button"
+                tabIndex={0}
+                className={`group relative cursor-pointer overflow-hidden rounded-[28px] bg-white transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kbc-orange focus-visible:ring-offset-2 ${
                   isActive
                     ? "shadow-[0_28px_64px_rgba(242,140,40,0.22)] ring-2 ring-kbc-orange"
                     : "shadow-[0_16px_48px_rgba(28,22,18,0.12)] ring-1 ring-kbc-charcoal/8 hover:-translate-y-2 hover:shadow-[0_24px_56px_rgba(28,22,18,0.16)]"
                 }`}
                 onMouseEnter={() => setActiveId(service.id)}
+                onClick={() => setActiveId(service.id)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setActiveId(service.id);
+                  }
+                }}
               >
                 <div className="relative h-56 overflow-hidden sm:h-60">
                   <Image

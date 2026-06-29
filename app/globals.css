@@ -24,6 +24,11 @@
   }
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   background: #0a0a0a;
   color: var(--foreground);
@@ -310,6 +315,13 @@ body {
   }
 
   .footer-brands-track {
+    animation: none;
+  }
+
+  .about-marquee-track,
+  .footer-cta-marquee-track,
+  .footer-cta-marquee-track-reverse,
+  .footer-brand-marquee-track {
     animation: none;
   }
 }

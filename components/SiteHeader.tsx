@@ -16,6 +16,7 @@ const navLinks = [
 
 export default function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [onHero, setOnHero] = useState(true);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -24,20 +25,50 @@ export default function SiteHeader() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setOnHero(entry.isIntersecting),
+      { threshold: 0.15 },
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
   const closeMenu = () => setIsOpen(false);
+  const solidHeader = !onHero || isOpen;
 
   return (
     <>
-      <header className="pointer-events-none absolute top-0 right-5 left-5 z-50">
-        <div className="flex items-center justify-between py-6 sm:py-8">
-          <div className="pointer-events-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
+      <header
+        className={`pointer-events-none fixed top-0 right-0 left-0 z-50 transition-colors duration-300 ${
+          solidHeader
+            ? "bg-kbc-charcoal/92 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-md"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-10 sm:py-6 lg:px-16">
+          <div
+            className={`pointer-events-auto transition-[filter] duration-300 ${
+              onHero && !isOpen
+                ? "drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+                : ""
+            }`}
+          >
             <KbcLogo size="header" priority href="#" />
           </div>
 
           <div className="pointer-events-auto flex items-center gap-3 sm:gap-4">
             <span
-              className={`max-w-[88px] rounded-full border border-white/30 bg-black/20 px-2.5 py-1.5 text-center text-[8px] leading-tight font-semibold uppercase tracking-wider text-white/90 backdrop-blur-sm transition-opacity duration-300 sm:max-w-none sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.22em] ${
+              className={`hidden rounded-full border px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.22em] backdrop-blur-sm transition-opacity duration-300 sm:inline-block ${
                 isOpen ? "pointer-events-none opacity-0" : "opacity-100"
+              } ${
+                onHero && !isOpen
+                  ? "border-white/30 bg-black/20 text-white/90"
+                  : "border-white/15 bg-white/5 text-white/80"
               }`}
             >
               Flame-Grilled Perfection

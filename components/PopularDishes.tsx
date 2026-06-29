@@ -54,9 +54,14 @@ export default function PopularDishes() {
     const container = scrollRef.current;
     if (!container) return;
 
+    const firstCard = container.querySelector<HTMLElement>(":scope > *");
+    const scrollAmount = firstCard
+      ? firstCard.offsetWidth + 28
+      : container.clientWidth * 0.85;
+
     setActiveDirection(direction);
     container.scrollBy({
-      left: direction === "left" ? -340 : 340,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };

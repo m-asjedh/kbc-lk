@@ -199,6 +199,7 @@ export default function FoundersSection() {
                     type="button"
                     onMouseEnter={() => setActiveStat(index)}
                     onFocus={() => setActiveStat(index)}
+                    onClick={() => setActiveStat(index)}
                     className={`group flex-1 rounded-2xl p-4 text-left ring-1 transition-all duration-500 sm:p-5 ${
                       activeStat === index
                         ? "bg-kbc-orange/15 ring-kbc-orange/50"
@@ -214,13 +215,7 @@ export default function FoundersSection() {
                     <p className="font-display mt-2 text-2xl tracking-wide text-white transition-transform duration-300 group-hover:translate-x-1">
                       {item.value}
                     </p>
-                    <p
-                      className={`mt-1 overflow-hidden text-xs text-white/45 transition-all duration-500 ${
-                        activeStat === index
-                          ? "max-h-8 opacity-100"
-                          : "max-h-0 opacity-0 sm:max-h-8 sm:opacity-100"
-                      }`}
-                    >
+                    <p className="mt-1 text-xs text-white/45">
                       {item.detail}
                     </p>
                   </button>

@@ -190,20 +190,35 @@ export default function AboutSection() {
               We believe in
             </h3>
 
-            <div className="grid gap-5 sm:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-3">
               {beliefs.map((belief) => {
                 const isHovered = hoveredBelief === belief.title;
 
                 return (
                   <article
                     key={belief.title}
-                    className={`group relative overflow-hidden rounded-2xl p-6 transition-all duration-300 ${
+                    role="button"
+                    tabIndex={0}
+                    className={`group relative cursor-pointer overflow-hidden rounded-2xl p-6 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kbc-orange ${
                       isHovered
                         ? "bg-kbc-orange shadow-[0_16px_40px_rgba(242,140,40,0.35)]"
                         : "bg-white/6 ring-1 ring-white/10"
                     }`}
                     onMouseEnter={() => setHoveredBelief(belief.title)}
                     onMouseLeave={() => setHoveredBelief(null)}
+                    onClick={() =>
+                      setHoveredBelief((current) =>
+                        current === belief.title ? null : belief.title,
+                      )
+                    }
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setHoveredBelief((current) =>
+                          current === belief.title ? null : belief.title,
+                        );
+                      }
+                    }}
                   >
                     <span
                       className={`font-display absolute top-4 right-4 text-5xl leading-none transition-colors ${

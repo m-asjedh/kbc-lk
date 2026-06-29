@@ -104,7 +104,7 @@ export default function GallerySection() {
                   />
                   {activeIndex === index && (
                     <span className="absolute inset-x-0 bottom-0 bg-linear-to-t from-kbc-charcoal/90 to-transparent px-2 py-2">
-                      <span className="block truncate text-[9px] font-semibold uppercase tracking-wider text-kbc-orange sm:text-[10px]">
+                      <span className="block truncate text-[10px] font-semibold uppercase tracking-wider text-kbc-orange sm:text-xs">
                         {image.caption}
                       </span>
                     </span>
