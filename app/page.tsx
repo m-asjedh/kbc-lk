@@ -1,7 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import SiteHeader from "@/components/SiteHeader";
 import BackToTopButton from "@/components/BackToTopButton";
-import ScrollReveal from "@/components/ScrollReveal";
 import PopularDishes from "@/components/PopularDishes";
 import AboutSection from "@/components/AboutSection";
 import FoundersSection from "@/components/FoundersSection";
@@ -16,33 +15,17 @@ export default function Home() {
     <>
       <SiteHeader />
       <main>
-      <HeroSection />
-      <ScrollReveal>
+        <HeroSection />
         <PopularDishes />
-      </ScrollReveal>
-      <ScrollReveal>
         <AboutSection />
-      </ScrollReveal>
-      <ScrollReveal>
         <RegularDishes />
-      </ScrollReveal>
-      <ScrollReveal>
         <OurServices />
-      </ScrollReveal>
-      <ScrollReveal>
         <FoundersSection />
-      </ScrollReveal>
-      <ScrollReveal>
         <GallerySection />
-      </ScrollReveal>
-      <ScrollReveal>
         <ReviewsSection />
-      </ScrollReveal>
-      <ScrollReveal>
         <SiteFooter />
-      </ScrollReveal>
-      <BackToTopButton />
-    </main>
+        <BackToTopButton />
+      </main>
     </>
   );
 }
